@@ -287,7 +287,8 @@ public class SwiftPrintBluetoothThermalPlugin: NSObject, CBCentralManagerDelegat
                    let allowedServices = [
                         CBUUID(string: "00001101-0000-1000-8000-00805F9B34FB"),
                         CBUUID(string: "49535343-FE7D-4AE5-8FA9-9FAFD205E455"),
-                        CBUUID(string: "A76EB9E0-F3AC-4990-84CF-3A94D2426B2B")
+                        CBUUID(string: "A76EB9E0-F3AC-4990-84CF-3A94D2426B2B"),
+                        CBUUID(string: "E7810A71-73AE-499D-8C15-FAA9AEF0C3F2"),
                    ]
 
                    if allowedServices.contains(service.uuid) {
@@ -315,12 +316,14 @@ public class SwiftPrintBluetoothThermalPlugin: NSObject, CBCentralManagerDelegat
 
         if let discoveredCharacteristics = service.characteristics {
             for characteristic in discoveredCharacteristics {
-                //print("characteristics found: \(characteristic.uuid)")
+                print("characteristics found: \(characteristic.uuid)")
             
                 let allowedCharacteristics = [
                     CBUUID(string: "00001101-0000-1000-8000-00805F9B34FB"), 
                     CBUUID(string: "49535343-8841-43F4-A8D4-ECBE34729BB3"), 
-                    CBUUID(string: "A76EB9E2-F3AC-4990-84CF-3A94D2426B2B")
+                    CBUUID(string: "A76EB9E2-F3AC-4990-84CF-3A94D2426B2B"),
+                    CBUUID(string: "BEF8D6C9-9C21-4C9E-B632-BD58C1009F9F"),
+                    
                 ]
 
                 if allowedCharacteristics.contains(characteristic.uuid) {
